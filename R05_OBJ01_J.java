@@ -10,7 +10,10 @@ package cis4615work;
  */
 public class R05_OBJ01_J {
     public class Widget{
-        public int total; // Number of elements
+        private int total; // Number of elements
+        public int getTotal (){
+            return total;
+        }
         void add() {
             if (total < Integer.MAX_VALUE) {
                 total++;
