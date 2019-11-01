@@ -20,11 +20,14 @@ public class R00_IDS03_J{
     static boolean loginSuccessful(){
         return username.equals("Guest");
     }
+    static String sanitizeUser(String uname){
+        return (Pattern.matches("[A-Za-z0-9_]+", uname)) ? uname : "unauthorized user";
+    };
     static void login(){
         if (loginSuccessful())
-            logger.severe("(NONCOMPLIANT) User login succeeded for: " + username);
+            logger.severe("User login succeeded for: " + sanitizeUser(username));
         else
-            logger.severe("(NONCOMPLIANT) User login failed for: " + username);
+            logger.severe("User login failed for: " + sanitizeUser(username));
     }
     
     void execute(){
