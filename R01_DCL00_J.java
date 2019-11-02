@@ -1,13 +1,9 @@
 /*
+ * Jesse Jamieson Abando
  * Rule 01. Declarations and Initialization (DCL)
  * DCL00-J. Prevent class initialization cycles
  */
-package cis4615work;
 
-/**
- *
- * @author JJ
- */
 public class R01_DCL00_J {
     public static class Cycle {
         private final int balance;
@@ -21,5 +17,8 @@ public class R01_DCL00_J {
         public static void main(String[] args) {
             System.out.println("The account balance is: " + c.balance);
         }
+    }
+    public static void main(String[] args){
+        Cycle.main(args);
     }
 }
