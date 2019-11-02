@@ -1,13 +1,8 @@
 /*
+ * Jesse Jamieson Abando
  * Rule 00: Input Validation and Data Sanitization (IDS)
  * IDS03-J: Do not log unsanitized user input
  */
-
-/**
- *
- * @author JJ
- */
-package cis4615work;
 
 import java.util.regex.Pattern;
 import java.util.logging.*;
@@ -30,7 +25,8 @@ public class R00_IDS03_J{
             logger.severe("User login failed for: " + sanitizeUser(username));
     }
     
-    void execute(){
+    public static void main(String[] args){
+        System.out.println("Logging in Guest and sanitizing input...");
         login();
     }
 }
