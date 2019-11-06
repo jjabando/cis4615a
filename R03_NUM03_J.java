@@ -6,6 +6,7 @@
 
 import java.io.DataInputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 
 public class R03_NUM03_J {
     public static long getInteger(DataInputStream is) throws IOException{
@@ -14,7 +15,11 @@ public class R03_NUM03_J {
     public static void main(String[] args){
         DataInputStream dis = new DataInputStream(System.in);
         try{
-            System.out.println(getInteger(dis));
+            System.out.println("Type in 4 characters");
+            long x = getInteger(dis);
+            byte[] bytes = ByteBuffer.allocate(8).putLong(x).array();
+            String str = new String(bytes);
+            System.out.println("Your input is: " + str.substring(4));
         }catch(IOException ex){
             System.out.println("Input could not be read!");
         }
